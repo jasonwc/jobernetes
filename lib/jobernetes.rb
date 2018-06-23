@@ -1,5 +1,7 @@
 require "jobernetes/version"
 require "jobernetes/configuration"
+require "jobernetes/job"
+require "jobernetes/cron_job"
 
 module Jobernetes
   # This hook happens after `Rails::Application` is inherited within

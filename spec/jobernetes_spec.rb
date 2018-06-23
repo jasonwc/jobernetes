@@ -12,7 +12,7 @@ describe Jobernetes do
       end
     end
 
-    it "returns an array with 10 elements" do
+    it "allows you to set keys on the configuration object" do
       config = Jobernetes.configuration
 
       expect(config.kube_config_path).to eq('my/cool/path')
