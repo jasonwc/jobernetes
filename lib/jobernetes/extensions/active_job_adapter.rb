@@ -1,6 +1,5 @@
 # ActiveJob docs: http://edgeguides.rubyonrails.org/active_job_basics.html
 # Example adapters ref: https://github.com/rails/rails/tree/master/activejob/lib/active_job/queue_adapters
-
 require 'active_job'
 require 'jobernetes/job'
 require 'jobernetes/cron_job'

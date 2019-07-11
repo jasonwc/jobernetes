@@ -1,5 +1,5 @@
 require 'kubeclient'
-require 'pry'
+require 'jobernetes/client'
 
 module Jobernetes
   module Job
@@ -8,16 +8,7 @@ module Jobernetes
     end
 
     def self.client
-      @client ||= build_client
-    end
-
-    def self.build_client
-      kube_config = File.expand_path(Jobernetes.configuration.kube_config_path)
-      config = Kubeclient::Config.read(kube_config)
-      Kubeclient::Client.new(config.context.api_endpoint + "/apis/batch", 'v1', {
-        ssl_options: config.context.ssl_options,
-        auth_options: config.context.auth_options
-      })
+      @client ||= Jobernetes::Client.new('/apis/batch')
     end
 
     def self.enqueue!(job)
